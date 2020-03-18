@@ -1,0 +1,96 @@
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-vtkll[0m
+{"level":"warn","ts":1584517106.7486603,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584517106.7496803,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-s2qr7[0m
+{"level":"warn","ts":1584517107.7911394,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584517107.793768,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-bdd-gh-1584515416-mas-l2ngs-2dntq[0m
+{"level":"warn","ts":1584517116.0196378,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584517117.1010127,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/bdd-gh-1584515416.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:3d7afa17ce4ba02dd65932b943bcd0926b2480ff
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/bdd-gh-1584515416 main.go
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/bdd-gh-1584515416"]            
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/18 07:39:07 pushed blob: sha256:139b51b8683ab58d2544adf1c7052ce824417cd23a6be5a2af42664bba71ec06
+2020/03/18 07:39:07 pushed blob: sha256:8ff388838e28e28c6c4defa1a53470b012566d3a0a9149d80b46308512f1bc88
+2020/03/18 07:39:09 gcr.io/jenkins-x-bdd3/bdd-gh-1584515416:0.0.1: digest: sha256:ec98a284b66444e690dcaf6175574e0b46f7472944d463e4beb82ff78ab96018 size: 428
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/bdd-gh-1584515416 to an unshallow repository
+Generating change log from git ref b0bce0f8f2357e395c4ecf890167e5768886fbf0 => 88d3d4bc36e0f2b4ee31bb669ebc61c1989d375b
+Associating user x-0 in users.jenkins.io with email c**d-bot@cloudbees.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 3d7afa17ce4ba02dd65932b943bcd0926b2480ff with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email c**d-bot@cloudbees.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 3d7afa17ce4ba02dd65932b943bcd0926b2480ff with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for cb-kubecd/bdd-gh-1584515416 and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/cb-kubecd/bdd-gh-1584515416/releases/tag/v0.0.1
+generated: /workspace/source/charts/bdd-gh-1584515416/templates/release.yaml
+Created Release bdd-gh-1584515416-0-0-1 resource in namespace **
+Updating PipelineActivity cb-kubecd-bdd-gh-1584515416-master-1 with version 0.0.1
+Updated PipelineActivities cb-kubecd-bdd-gh-1584515416-master-1 with release notes URL: https://github.com/cb-kubecd/bdd-gh-1584515416/releases/tag/v0.0.1
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file bdd-gh-1584515416-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mcb-kubecd-bdd-gh-1584515416-mas-l2ngs-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app bdd-gh-1584515416 version 0.0.1 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4
+Added label updatebot to Pull Request https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4
+Pull Request https://github.com/cb-kubecd/environment-pr-184-26-boot-gke-staging/pull/4 is merged at sha ff796cdd3ecb6267a2b093e2aee58bdd92e6190a
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names bdd-gh-1584515416, **-bdd-gh-1584515416, **-staging-bdd-gh-1584515416
